@@ -1,0 +1,13 @@
+.alert__success{
+    background-color: #d0ecd0;
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    padding: 1rem;
+    margin: 1rem 0rem 1.5rem 0rem;
+}
+.notAlert {
+    display: none;
+}
