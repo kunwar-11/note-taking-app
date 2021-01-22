@@ -5,6 +5,11 @@ import Alert from './Components/Alert'
 import AddedAlert from './Components/AddedAlert'
 import './Styles/App.css'
 import Notes from "./Components/Notes";
+import IndividualNote from './Components/IndividualNote'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route} from 'react-router-dom'
 function App() {
   const [notes , setNotes] = useState([])
   const [header , setHeader] = useState('')
@@ -56,14 +61,21 @@ function App() {
   }, [notes]);
   // console.log(notes)
   return (
+    <Router>
     <div className="App">
         <Header />
-        {isAdded ? <AddedAlert isAdded = {isAdded} setIsAdded = {setIsAdded} alertStatement = {alertStatement}/> : <Alert isAlert = {isAlert} setIsAlert = {setIsAlert} alertStatement = {alertStatement}/>}
-        <input className = 'heading' type="text" value = {header} placeholder = 'enter heading here' onChange = {(e) => setHeader(e.target.value)}/>
-        <textarea className = 'note' value = {noteTake} cols="30" rows="10" placeholder = 'enter your note here' onChange = {(e) => setNoteTake(e.target.value)}></textarea>
-        <button className = 'submit' onClick = {submitClickHandler}>Submit</button>
-        <Notes notes = {notes} setNotes = {setNotes}/>
+        <Switch>
+          <Route path = '/' exact>
+            {isAdded ? <AddedAlert isAdded = {isAdded} setIsAdded = {setIsAdded} alertStatement = {alertStatement}/> : <Alert isAlert = {isAlert} setIsAlert = {setIsAlert} alertStatement = {alertStatement}/>}
+            <input className = 'heading' type="text" value = {header} placeholder = 'enter heading here' onChange = {(e) => setHeader(e.target.value)}/>
+            <textarea className = 'note' value = {noteTake} cols="30" rows="10" placeholder = 'enter your note here' onChange = {(e) => setNoteTake(e.target.value)}></textarea>
+            <button className = 'submit' onClick = {submitClickHandler}>Submit</button>
+            <Notes notes = {notes} setNotes = {setNotes}/>
+          </Route>
+          <Route path = '/notes/:notes' component = {IndividualNote}/>
+        </Switch>
     </div>
+    </Router>
   );
 }
 

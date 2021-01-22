@@ -8,6 +8,15 @@
     padding: 1rem;
     margin: 1rem 0rem 1.5rem 0rem;
 }
+.alert__remover{
+    cursor: pointer;
+    
+}
 .notAlert {
     display: none;
+}
+@media screen and (max-width : 426px) {
+    .alert{
+        width: 70%;
+    }
 }

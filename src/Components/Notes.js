@@ -1,5 +1,6 @@
 import React from 'react'
 import { Delete } from '@material-ui/icons'
+import { Link } from 'react-router-dom'
 import '../Styles/Notes.css'
 function Notes( {notes , setNotes}) {
     function textAbstract(text, length) {
@@ -22,15 +23,17 @@ function Notes( {notes , setNotes}) {
             {notes.map((note) => {
                 return (
                     <div key = {note.id} className = "notes__each">
-                        <h1 className = 'notes__title'>
-                            {textAbstract(note.title,15)}
-                        </h1>
-                        <small className = "notes__date">
-                            {note.date}
-                        </small>
-                        <h4 className = 'notes__content'>
-                            {textAbstract(note.text , 200)}
-                        </h4>
+                        <Link to = {`/notes/${note.date}^${note.title}^${note.text}`}>
+                            <h1 className = 'notes__title'>
+                                {textAbstract(note.title,15)}
+                            </h1>
+                            <small className = "notes__date">
+                                {note.date}
+                            </small>
+                            <h4 className = 'notes__content'>
+                                {textAbstract(note.text , 200)}
+                            </h4>
+                        </Link>
                         <Delete className = "notes__delete__btn" size = '2x' onClick = {() => deleteHandler(note.id)}/>
                     </div>
                 )

@@ -13,7 +13,7 @@ function Alert({isAlert , setIsAlert , alertStatement}) {
     return (
         <div className = {`${isAlert ? 'alert' : 'notAlert'}`}>
             <h4 className = 'alert__header'>{alertStatement}</h4>
-            <Clear onClick = {() => setIsAlert(false)}/>
+            <Clear className = "alert__remover" onClick = {() => setIsAlert(false)}/>
         </div>
     )
 }

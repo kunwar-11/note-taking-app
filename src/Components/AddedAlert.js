@@ -13,7 +13,7 @@ function AddedAlert({isAdded , setIsAdded , alertStatement}) {
     return (
         <div className = {`${isAdded ? 'alert__success' : 'notAlert'}`}>
             <h4 className = 'alert__header'>{alertStatement}</h4>
-            <Clear onClick = {() => setIsAdded(false)}/>
+            <Clear className = "alert__remover" onClick = {() => setIsAdded(false)}/>
         </div>
     )
 }
