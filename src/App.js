@@ -59,7 +59,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem('items', JSON.stringify(notes));
   }, [notes]);
-  // console.log(notes)
   return (
     <Router>
     <div className="App">

@@ -11,7 +11,7 @@ function IndividualNote({match}) {
                 {title_text[0]}
             </small>
             <p className = 'individual__note__notes'>
-                {title_text[2]}
+                {title_text[2].replace(/^\s*[\r\n]/gm)}
             </p>
             <Link to = '/'>
                 <button className = 'back__to__home'> <ArrowBack /> Go Back</button>

@@ -45,7 +45,7 @@ a:hover {
     color: #ff726f;
     padding-top: 0.5rem;
     position: relative;
-    top: 8px;
+    top: 1px;
 }
 .notes__delete__btn:hover {
     color: red;
