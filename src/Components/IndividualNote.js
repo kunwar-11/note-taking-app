@@ -3,7 +3,6 @@ import '../Styles/IndividualNote.css'
 import { ArrowBack } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 function IndividualNote(props) {
-    console.log(props.location.aboutProps)
     return (
         <div className = 'individual__note'>
             <h1 className = 'individual__note__title'>{props.location.aboutProps.title}</h1>
