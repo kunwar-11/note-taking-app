@@ -64,9 +64,10 @@ a:hover {
         margin: 1rem 0;
     }
 }
-@media screen and (max-width : 321px) {
+@media screen and (max-width : 325px) {
     .notes__each {
-        height: 330px;
+        height: 320px;
         margin: 1rem 0;
+        padding: 0.5rem;
     }
 }
