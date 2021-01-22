@@ -23,7 +23,11 @@ function Notes( {notes , setNotes}) {
             {notes.map((note) => {
                 return (
                     <div key = {note.id} className = "notes__each">
-                        <Link to = {`/notes/${note.date}^${note.title}^${note.text}`}>
+                        <Link to = {{pathname : `/notes/${note.id}`,aboutProps : {
+                            title : note.title,
+                            date : note.date,
+                            text : note.text
+                        }}}>
                             <h1 className = 'notes__title'>
                                 {textAbstract(note.title,15)}
                             </h1>
