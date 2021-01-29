@@ -22,7 +22,7 @@ a:hover {
         align-items: center;
         padding: 1rem;
         box-sizing: border-box;
-        height: 100%;
+        height: 300px;
         width: 300px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
